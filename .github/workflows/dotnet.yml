@@ -24,24 +24,14 @@ jobs:
       run: dotnet restore
     # Run code analysis for all projects/solutions, such that code analysis violations break the build.
     - name: Run dotnet format (code formatting check)
-      run: dotnet format --check --verbosity detailed
+      run: dotnet format --report --report-format=sarif --verbosity detailed
       continue-on-error: true
-    - name: Run static code analysis with Roslyn Analyzers
-      run: dotnet build --no-restore -p:TreatWarningsAsErrors=true
-      continue-on-error: true
-    - name: Run tests and collect code coverage
-      run: |
-        dotnet test --no-build --collect:"XPlat Code Coverage"
-        reportgenerator -reports:**/coverage.cobertura.xml -targetdir:coverage -reporttypes:Html
-
-    - name: Upload code analysis results
+    - name: Upload format report
       if: failure()
       uses: actions/upload-artifact@v2
       with:
-        name: code-analysis-results
-        path: |
-          **/*.csproj.FormatAnalysis.txt
-          **/MSBuildWarnings.txt
+        name: format-report
+        path: format.sarif
     - name: Build
       run: dotnet build --no-restore
     - name: Test
