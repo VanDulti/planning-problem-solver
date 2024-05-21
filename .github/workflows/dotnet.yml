@@ -32,6 +32,11 @@ jobs:
       with:
         name: format-report
         path: format.sarif
+    - name: Annotate code with format errors
+      if: failure()
+      uses: github/codeql-action/upload-sarif@v2
+      with:
+        sarif_file: format.sarif
     - name: Build
       run: dotnet build --no-restore
     - name: Test
