@@ -27,13 +27,11 @@ jobs:
       run: dotnet format --report --report-format=sarif --verbosity detailed
       continue-on-error: true
     - name: Upload format report
-      if: failure()
       uses: actions/upload-artifact@v2
       with:
         name: format-report
         path: format.sarif
     - name: Annotate code with format errors
-      if: failure()
       uses: github/codeql-action/upload-sarif@v2
       with:
         sarif_file: format.sarif
