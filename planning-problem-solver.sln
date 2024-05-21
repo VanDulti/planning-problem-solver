@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sample-problem", "sample-problem\sample-problem.csproj", "{DD3BC03B-DD77-404F-BC69-00BC47557395}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "planning-problem-solver", "planning-problem-solver\planning-problem-solver.csproj", "{0DB88067-76A8-4673-B4E5-2D2DCD39C7A9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD3BC03B-DD77-404F-BC69-00BC47557395}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD3BC03B-DD77-404F-BC69-00BC47557395}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD3BC03B-DD77-404F-BC69-00BC47557395}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD3BC03B-DD77-404F-BC69-00BC47557395}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DB88067-76A8-4673-B4E5-2D2DCD39C7A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DB88067-76A8-4673-B4E5-2D2DCD39C7A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DB88067-76A8-4673-B4E5-2D2DCD39C7A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DB88067-76A8-4673-B4E5-2D2DCD39C7A9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
