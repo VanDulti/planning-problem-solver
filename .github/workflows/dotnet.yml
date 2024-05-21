@@ -24,7 +24,7 @@ jobs:
       run: dotnet restore
     # Run code analysis for all projects/solutions, such that code analysis violations break the build.
     - name: Run dotnet format (code formatting check)
-      run: dotnet format --report --report-format=sarif --verbosity detailed
+      run: dotnet format --report format.sarif --report-format=sarif --verbosity detailed
       continue-on-error: true
     - name: Upload format report
       uses: actions/upload-artifact@v2
