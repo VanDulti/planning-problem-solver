@@ -23,11 +23,10 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     # Run code analysis for all projects/solutions, such that code analysis violations break the build.
-    - name: Run .NET Code Analysis
-      uses: dotnet/code-analysis@main
-      id: code-analysis
+    - name: Annotate
+      uses: JetBrains/ReSharper-InspectCode@v0.3
       with:
-        build-breaking: true
+        solution: ./planning-problem-solver.sln
     - name: Build
       run: dotnet build --no-restore
     - name: Test
