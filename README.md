@@ -5,6 +5,12 @@ uses https://fmv.jku.at/limboole/ to solve it.
 
 I did this for my Formal Models class at JKU.
 
+![CodeQL]
+(https://github.com/VanDulti/planning-problem-solver/actions/workflows/codeql.yml/badge.svg)
+
+![Build]
+(https://github.com/VanDulti/planning-problem-solver/actions/workflows/dotnet.yml/badge.svg)
+
 ## planning-problem-solver
 
 Offers a simple API for encoding a planning problem as a propositional formula and solving it using Limboole.
