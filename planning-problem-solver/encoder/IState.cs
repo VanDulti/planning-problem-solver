@@ -1,4 +1,4 @@
-namespace PlanningProblemSolver.encoder;
+namespace PlanningProblemSolver.Encoder;
 
 /**
  * Represents a state in the planning problem.

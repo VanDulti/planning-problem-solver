@@ -1,6 +1,6 @@
-using PlanningProblemSolver.encoder;
+using PlanningProblemSolver.Encoder;
 
-namespace PlanningProblemSolver.solver;
+namespace PlanningProblemSolver.Solver;
 
 /// <summary>
 /// A solver that uses a limboole instance to repeatedly check the satisfiability of a formula with increasing n

@@ -1,4 +1,4 @@
-namespace PlanningProblemSolver.encoder;
+namespace PlanningProblemSolver.Encoder;
 
 /// <summary>
 /// Simple representation of a state in a planning problem.

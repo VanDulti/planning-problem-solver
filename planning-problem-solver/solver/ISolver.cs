@@ -1,6 +1,6 @@
-using PlanningProblemSolver.encoder;
+using PlanningProblemSolver.Encoder;
 
-namespace PlanningProblemSolver.solver;
+namespace PlanningProblemSolver.Solver;
 
 /// <summary>
 /// Interface for a solver that can solve a bounded planning problem in one go.

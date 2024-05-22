@@ -1,6 +1,6 @@
-﻿using formal_models_exercise_31;
-using PlanningProblemSolver.encoder;
-using PlanningProblemSolver.solver;
+﻿using PlanningProblemSolver.Example;
+using PlanningProblemSolver.Encoder;
+using PlanningProblemSolver.Solver;
 
 var limBoole = new Limboole { ExecutablePath = "limbooleOSX" };
 var solver = new Solver { Limboole = limBoole };
@@ -66,7 +66,7 @@ void SolvePlanningProblem()
         { IsVienna = true, IsLinz = false, IsSalzburg = false, IsInnsbruck = false, HasG2 = false };
     var viennaWithG2 = new State
         { IsVienna = true, IsLinz = false, IsSalzburg = false, IsInnsbruck = false, HasG2 = true };
-
+    
     var actions = new Dictionary<string, (IState, IState)>
     {
         { "linzToVienna", (linz, vienna) },
@@ -79,22 +79,22 @@ void SolvePlanningProblem()
         { "deployG2", (salzburgG2NotDeployed, salzburgG2Deployed) },
         { "deployG1", (innsbruckG1NotDeployed, innsbruckG1Deployed) }
     };
-
+    
     var problem = new BoundedPlanningProblem
     {
         InitialState = initialState,
         GoalState = goalState,
         Actions = actions
     };
-
+    
     if (!solver.Solve(problem, out var model, 15))
     {
         Console.WriteLine("No solution found. Try increasing the maxN parameter.");
         return;
     }
-
+    
     File.WriteAllTextAsync("31-model.boole", model);
-
+    
     // // Alternatively, use the LogicEncoder to encode the problem and write it to a file.
     // // Afterward, you can use Limboole on the go to check the satisfiability of the formula.
     // var encoder = new LogicEncoder { Problem = problem };
@@ -120,7 +120,7 @@ void SolveModifiedProblem()
      * This is of course not possible in the given directed graph, as we can't go back from Salzburg to Linz or from Innsbruck to Salzburg to pick up the second good.
      * Therefore, I had to modify the problem a bit to make it solvable:
      * I added the possibility to go from Salzburg to Linz, Salzburg to Vienna and from Innsbruck to Salzburg
-
+    
      * Otherwise, the problem would get pretty complicated.
      */
     var linzWithoutG1 = new State
@@ -131,7 +131,7 @@ void SolveModifiedProblem()
         { IsVienna = true, IsLinz = false, IsSalzburg = false, IsInnsbruck = false, HasG1 = false, HasG2 = false };
     var viennaWithG2 = new State
         { IsVienna = true, IsLinz = false, IsSalzburg = false, IsInnsbruck = false, HasG1 = false, HasG2 = true };
-
+    
     var actions = new Dictionary<string, (IState, IState)>
     {
         { "linzToVienna", (linz, vienna) },
@@ -147,22 +147,22 @@ void SolveModifiedProblem()
         { "deployG2", (salzburgG2NotDeployed, salzburgG2Deployed) },
         { "deployG1", (innsbruckG1NotDeployed, innsbruckG1Deployed) }
     };
-
+    
     var problem = new BoundedPlanningProblem
     {
         InitialState = initialState,
         GoalState = goalState,
         Actions = actions
     };
-
+    
     if (!solver.Solve(problem, out var model, 15))
     {
         Console.WriteLine("No solution found. Try increasing the maxN parameter.");
         return;
     }
-
+    
     File.WriteAllTextAsync("32-model.boole", model);
-
+    
     // // Alternatively, use the LogicEncoder to encode the problem and write it to a file.
     // // Afterward, you can use Limboole on the go to check the satisfiability of the formula.
     // var encoder = new LogicEncoder { Problem = problem };

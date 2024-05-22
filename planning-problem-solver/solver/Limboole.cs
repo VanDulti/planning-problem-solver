@@ -1,6 +1,6 @@
 using System.Diagnostics;
 
-namespace PlanningProblemSolver.solver;
+namespace PlanningProblemSolver.Solver;
 
 /// <summary>
 /// Limboole implementation that uses a local limboole executable to check the satisfiability of a formula.

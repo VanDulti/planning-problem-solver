@@ -1,4 +1,4 @@
-namespace PlanningProblemSolver.encoder;
+namespace PlanningProblemSolver.Encoder;
 
 /// <summary>
 /// A simple state that holds any number of dictionary state variables.

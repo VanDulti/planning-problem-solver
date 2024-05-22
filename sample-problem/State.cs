@@ -1,6 +1,6 @@
-using PlanningProblemSolver.encoder;
+using PlanningProblemSolver.Encoder;
 
-namespace formal_models_exercise_31;
+namespace PlanningProblemSolver.Example;
 
 /// <summary>
 /// A custom IState implementation for the sample problem that enforces a specific set of possible state variables.
@@ -11,13 +11,11 @@ public class State : IState
     public bool? IsVienna { get; init; }
     public bool? IsSalzburg { get; init; }
     public bool? IsInnsbruck { get; init; }
-
     public bool? HasDeployedG1 { get; init; }
-
     public bool? HasDeployedG2 { get; init; }
     public bool? HasG1 { get; init; }
     public bool? HasG2 { get; init; }
-
+    
     public Dictionary<string, bool?> StateVariables => new()
     {
         { "IsLinz", IsLinz },

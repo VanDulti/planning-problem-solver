@@ -1,4 +1,4 @@
-namespace PlanningProblemSolver.encoder;
+namespace PlanningProblemSolver.Encoder;
 
 /// <summary>
 /// Encodes a planning problem into a logic encoding that can be solved by a SAT solver.

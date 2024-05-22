@@ -1,4 +1,4 @@
-namespace PlanningProblemSolver.solver;
+namespace PlanningProblemSolver.Solver;
 
 /// <summary>
 /// Offers access to a boolean satisfiability checker.
