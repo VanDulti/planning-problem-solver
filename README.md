@@ -5,11 +5,8 @@ uses https://fmv.jku.at/limboole/ to solve it.
 
 I did this for my Formal Models class at JKU.
 
-![CodeQL]
-(https://github.com/VanDulti/planning-problem-solver/actions/workflows/codeql.yml/badge.svg)
-
-![Build]
-(https://github.com/VanDulti/planning-problem-solver/actions/workflows/dotnet.yml/badge.svg)
+![CodeQL](https://github.com/VanDulti/planning-problem-solver/actions/workflows/codeql.yml/badge.svg)
+![Build](https://github.com/VanDulti/planning-problem-solver/actions/workflows/dotnet.yml/badge.svg)
 
 ## planning-problem-solver
 
