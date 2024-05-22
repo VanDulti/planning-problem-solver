@@ -32,16 +32,16 @@ var salzburgG2NotDeployed = new State
 var salzburgG2Deployed = new State
     { IsVienna = false, IsLinz = false, IsSalzburg = true, IsInnsbruck = false, HasG2 = false, HasDeployedG2 = true };
 
-Console.WriteLine("Exercise 31: Bounded Planning Problem");
-SolveExercise31();
-Console.WriteLine("Exercise 32: Modified Bounded Planning Problem");
-SolveExercise32();
+Console.WriteLine("First bounded planning problem");
+SolvePlanningProblem();
+Console.WriteLine("\n\nModified bounded planning problem");
+SolveModifiedProblem();
 return;
 
-void SolveExercise31()
+void SolvePlanningProblem()
 {
     /*
-     * # Exercise 31: Bounded Planning Problem
+     * # Bounded Planning Problem
      *
      * ## Task
      * A transport company has a single truck to delivers goods from / to Linz, Vienna, Innsbruck, and Salzburg. Starting point is Linz where good G1 is located that should go to Innsbruck. Good G2 is located in Vienna and should go to Salzburg. From Linz it is possible to go to Vienna or to Salzburg. From Vienna it is possible to go to Salzburg or Linz and from Salzburg it is possible to go to Innsbruck.
@@ -94,12 +94,18 @@ void SolveExercise31()
     }
 
     File.WriteAllTextAsync("31-model.boole", model);
+
+    // // Alternatively, use the LogicEncoder to encode the problem and write it to a file.
+    // // Afterward, you can use Limboole on the go to check the satisfiability of the formula.
+    // var encoder = new LogicEncoder { Problem = problem };
+    // var formula = encoder.Encode(7); // I already know that n=7 is the smallest value for which a solution exists
+    // File.WriteAllTextAsync("31-formula.boole", formula);
 }
 
-void SolveExercise32()
+void SolveModifiedProblem()
 {
     /*
-     * # Exercise 32: Modified Bounded Planning Problem
+     * # Second example: Modified Bounded Planning Problem
      *
      * ## Task
      * Modify your solution from Exercise 31 to only allow the truck to carry one parcel at a time.
@@ -156,4 +162,10 @@ void SolveExercise32()
     }
 
     File.WriteAllTextAsync("32-model.boole", model);
+
+    // // Alternatively, use the LogicEncoder to encode the problem and write it to a file.
+    // // Afterward, you can use Limboole on the go to check the satisfiability of the formula.
+    // var encoder = new LogicEncoder { Problem = problem };
+    // var formula = encoder.Encode(9); // I already know that n=9 is the smallest value for which a solution exists
+    // File.WriteAllTextAsync("32-formula.boole", formula);
 }

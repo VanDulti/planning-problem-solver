@@ -10,5 +10,6 @@ public class SimpleState : IState
     /// <summary>
     /// The state variables of this state.
     /// </summary>
+    // ReSharper disable once UnusedAutoPropertyAccessor.Global
     public required Dictionary<string, bool?> StateVariables { get; init; }
 }

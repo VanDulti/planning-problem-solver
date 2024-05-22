@@ -1,13 +1,13 @@
 # Planning Problem Solver
 
-This is a simple planning problem solver that encodes a bounded planning problem as an SAT formula and uses
-[Limboole](https://fmv.jku.at/limboole/) to actually solve it.
+This is a simple planning problem solver that encodes a bounded planning problem in propositional logic and
+uses https://fmv.jku.at/limboole/ to solve it.
 
-This was a homework assignment for my Formal Models class at JKU Linz.
+I did this for my Formal Models class at JKU.
 
 ## planning-problem-solver
 
-Offers a simple API for encoding a planning problem as a SAT formula and solve it using Limboole.
+Offers a simple API for encoding a planning problem as a propositional formula and solving it using Limboole.
 
 First, you need to specify your bounded planning problem.
 A bounded planning problem consists of:
@@ -17,10 +17,10 @@ A bounded planning problem consists of:
 - initial state
 - goal state
 
-You need to specify the initial state, goal state and actions. 
-The states are implicitly defined by them.
+You only have to specify the initial state, goal state and actions (states are inferred from the actions).
 
-To specify a state you can either use the predefined `SimpleState` class or implement `IState` (for an example see `example-problem`) yourself.
+To specify a state you can either use the predefined `SimpleState` class or implement `IState` (for an example
+see `example-problem`) yourself.
 
 Usage of `SimpleState` to specify states for a planning problem:
 
@@ -48,7 +48,7 @@ BoundedPlanningProblem problem = new BoundedPlanningProblem
 };
 ```
 
-To encode the planning problem as a SAT formula use the `LogicEncoder` class:
+To encode the planning problem as a propositional formula use the `LogicEncoder` class:
 
 ```csharp
 LogicEncoder encoder = new LogicEncoder { Problem = problem };
@@ -86,6 +86,6 @@ For sample usage see `sample-problem`.
 
 ## sample-problem
 
-My solution to the homework assignment. It encodes a simple planning problem as a SAT formula and solves it using
+My solution to the assignment. It encodes a simple planning problem as a logical formula and solves it using
 Limboole.
 
