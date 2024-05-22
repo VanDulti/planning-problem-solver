@@ -1,6 +1,6 @@
 # Planning Problem Solver
 
-This is a simple planning problem solver that encodes a bounded planning problem in propositional logic and
+This is a simple planning problem solver that encodes a bounded planning problem as propositional logic and
 uses https://fmv.jku.at/limboole/ to solve it.
 
 I did this for my Formal Models class at JKU.
